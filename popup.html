@@ -2,14 +2,19 @@
 <html>
 <head>
   <style>
-    body { width: 250px; padding: 10px; font-family: sans-serif; }
+    body { width: 300px; padding: 10px; font-family: sans-serif; }
     label { display: block; margin-top: 10px; font-size: 14px; }
     .time-inputs { display: flex; gap: 5px; margin-top: 5px; }
     input[type="text"] { width: 100%; margin-top: 5px; padding: 5px; box-sizing: border-box; }
     input[type="number"] { width: 60%; padding: 5px; box-sizing: border-box; }
     select { width: 40%; padding: 5px; }
-    button { margin-top: 15px; width: 100%; padding: 8px; cursor: pointer; }
-    #status { margin-top: 10px; color: green; font-size: 12px; }
+    button { margin-top: 10px; width: 100%; padding: 8px; cursor: pointer; }
+    #status { margin-top: 10px; color: green; font-size: 12px; text-align: center; }
+    
+    hr { margin: 15px 0; border: 0; border-top: 1px solid #ccc; }
+    .site-list { list-style: none; padding: 0; margin: 0; }
+    .site-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+    .remove-btn { background: #ff4d4d; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; width: auto; margin: 0; }
   </style>
 </head>
 <body>
@@ -27,8 +32,14 @@
     </select>
   </div>
   
-  <button id="saveBtn">Set Timer</button>
+  <button id="saveBtn">Add Site</button>
   <div id="status"></div>
+
+  <hr>
+  <h4>Active Hauntings</h4>
+  <ul id="activeSites" class="site-list">
+    <!-- JS will populate this -->
+  </ul>
 
   <script src="popup.js"></script>
 </body>
